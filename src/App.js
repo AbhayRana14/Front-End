@@ -4,6 +4,7 @@ import Menu from './components/MenuComponent';
 import { DISHES } from './shared/dishes';
 import './App.css';
 import { Navbar, NavbarBrand } from 'reactstrap';
+import Main from './components/MainComponent'
 
 class App extends Component {
     constructor(props){
@@ -16,12 +17,10 @@ class App extends Component {
         return (
 
         <div className="App">
-            <Navbar dark color="primary">
-            <div className="container">
-                <NavbarBrand href="/">Ristorante Confusion</NavbarBrand>
-            </div>
-            </Navbar>
+            <Main>
             <Menu dishes={this.state.dishes}/>
+            </Main>
+            
         </div>
         
         
