@@ -25,7 +25,7 @@ import { baseUrl } from '../shared/baseUrl';
 	}
 
 
-	function RenderComments({comments,addComment,disId}) {
+	function RenderComments({comments,postComment,disId}) {
 		if (comments == null) {
 			return <div></div>;
 		}
@@ -42,7 +42,7 @@ import { baseUrl } from '../shared/baseUrl';
 						}).format(new Date(comment.date))}
 					</p>
 				</li>
-				/*<CommentForm dishId={dishId} addComment={addComment} /> */
+				/* <CommentForm dishId={dishId} postComment={postComment} />*/
 			);
 		});
 		return (
@@ -52,7 +52,7 @@ import { baseUrl } from '../shared/baseUrl';
 			</div>
 		);
 	}
-	/* handle function --     this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);*/
+	/* handle function --    this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);*/
     
 
 	const DishDetail=(props)=> {
@@ -94,7 +94,7 @@ import { baseUrl } from '../shared/baseUrl';
 			<div className="row">
 					<RenderDish dish={props.dish} />
 					<RenderComments comments={props.comments} 
-					addComment={props.addComment}
+					postComment={props.postComment}
 					disId={props.dish.id} />
 				
 			</div>
